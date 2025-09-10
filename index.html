@@ -3,94 +3,55 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>나의 6개월 감량 캘린더</title>
-  <meta name="theme-color" content="#ffffff">
-  <!-- iOS Add-to-Home -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>감량 캘린더 · 6개월 PWA</title>
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
   <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>6개월 감량 캘린더</h1>
-    <button id="installBtn" class="ghost small" hidden>홈 화면에 추가</button>
+  <header class="appbar">
+    <h1>감량 캘린더</h1>
+    <button id="installBtn" hidden>홈 화면에 추가</button>
   </header>
-
-  <section class="controls">
-    <div class="row">
-      <label for="startDate">시작일</label>
-      <input type="date" id="startDate">
-    </div>
-    <div class="row">
-      <label for="weeks">기간(주)</label>
-      <input type="number" id="weeks" value="24" min="4" max="52">
-    </div>
-    <div class="row">
+  <main>
+    <section class="controls">
+      <label>시작일 <input type="date" id="startDate"></label>
+      <label>기간(주) <input type="number" id="weeks" value="24" min="4" max="52"></label>
       <button id="applyPlan">플랜 적용</button>
-      <button id="todayBtn" class="ghost">오늘로</button>
-      <button id="exportBtn" class="ghost">백업</button>
-      <label class="import-label">
-        복원
-        <input type="file" id="importFile" accept="application/json" hidden>
-      </label>
+      <button id="todayBtn">오늘로</button>
+      <button id="exportBtn">백업</button>
+      <input type="file" id="importFile" accept="application/json">
+    </section>
+    <section class="kpi">
+      <div id="kpiRange"></div>
+      <div>✅ <span id="kpiDone">0</span></div>
+      <div>❌ <span id="kpiFail">0</span></div>
+      <div>성공률 <span id="kpiRate">0%</span></div>
+      <p id="motivationText">오늘의 동기부여 ✨</p>
+    </section>
+    <nav>
+      <button id="prevMonth">◀</button>
+      <span id="monthLabel"></span>
+      <button id="nextMonth">▶</button>
+    </nav>
+    <section class="calendar" id="calendar"></section>
+    <div id="statusPicker" class="hidden">
+      <button data-status="success">✅ 성공</button>
+      <button data-status="partial">🟨 부분</button>
+      <button data-status="fail">❌ 실패</button>
+      <button data-status="clear">◻️ 지우기</button>
+      <button data-status="note">📝 메모</button>
     </div>
-  </section>
-
-  <section class="summary">
-    <div class="card">
-      <div class="kpis">
-        <div><strong id="kpiRange">-</strong><span>기간</span></div>
-        <div><strong id="kpiDone">0</strong><span>성공(✅)</span></div>
-        <div><strong id="kpiFail">0</strong><span>실패(❌)</span></div>
-        <div><strong id="kpiRate">0%</strong><span>성공률</span></div>
-      </div>
-      <p class="motivation" id="motivationText">오늘의 한 줄 동기부여 ✨</p>
-    </div>
-  </section>
-
-  <nav class="month-nav">
-    <button id="prevMonth">◀</button>
-    <h2 id="monthLabel">2025년 9월</h2>
-    <button id="nextMonth">▶</button>
-  </nav>
-
-  <section class="calendar" id="calendar"></section>
-
-  <section class="legend">
-    <div class="phase"><span class="dot phase1"></span> 1개월차 적응기</div>
-    <div class="phase"><span class="dot phase2"></span> 2~3개월차 가속/90kg대</div>
-    <div class="phase"><span class="dot phase3"></span> 4개월차 컷</div>
-    <div class="phase"><span class="dot phase4"></span> 5개월차 목표 근접</div>
-    <div class="phase"><span class="dot phase5"></span> 6개월차 마무리</div>
-  </section>
-
-  <footer>
-    <details>
-      <summary>세부 가이드 보기</summary>
-      <div id="planDetails"></div>
-    </details>
-    <p class="tiny">오프라인 저장 · PWA 설치 가능 · iOS 사파리에서 공유 → “홈 화면에 추가”</p>
-  </footer>
-
-  <div id="statusPicker" class="picker hidden">
-    <button data-status="success">✅ 성공</button>
-    <button data-status="fail">❌ 실패</button>
-    <button data-status="clear">◻️ 지우기</button>
-    <button data-status="note">📝 메모</button>
-  </div>
-
-  <div id="noteModal" class="modal hidden">
-    <div class="modal-card">
+    <div id="noteModal" class="hidden">
       <h3 id="noteTitle">메모</h3>
-      <textarea id="noteText" rows="6" placeholder="예: 오늘 1,450kcal / 복싱 60분 / 물 2L"></textarea>
-      <div class="modal-actions">
-        <button id="saveNote">저장</button>
-        <button id="cancelNote" class="ghost">닫기</button>
-      </div>
+      <textarea id="noteText"></textarea>
+      <button id="saveNote">저장</button>
+      <button id="cancelNote">닫기</button>
     </div>
-  </div>
-
+    <div id="planDetails"></div>
+  </main>
   <script src="plan.js"></script>
   <script src="app.js"></script>
 </body>

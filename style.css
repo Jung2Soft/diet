@@ -1,39 +1,7 @@
-*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,sans-serif}
-header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff}
-h1{font-size:18px;margin:0}
-.ghost{background:#f6f6f6;border:1px solid #eee}
-.small{font-size:12px;padding:6px 8px}
-.controls{padding:12px 16px;display:grid;gap:10px}
-.controls .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.controls label{min-width:64px;color:#444}
-.controls input[type="date"], .controls input[type="number"]{padding:8px;border:1px solid #ddd;border-radius:8px}
-.controls button, .import-label{padding:10px 14px;border-radius:10px;border:1px solid #ddd;background:#fff}
-.import-label{display:inline-flex;gap:6px;align-items:center;cursor:pointer}
-.summary{padding:0 16px}
-.card{border:1px solid #eee;border-radius:12px;padding:12px;background:#fff}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;text-align:center}
-.kpis strong{display:block;font-size:18px}
-.kpis span{font-size:12px;color:#666}
-.motivation{margin:8px 0 0;font-size:14px;color:#333}
-.month-nav{display:flex;gap:12px;justify-content:center;align-items:center;padding:10px 16px}
-.month-nav button{border:1px solid #eee;background:#fff;border-radius:10px;padding:6px 10px}
-#monthLabel{margin:0;font-size:16px}
-.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:0 10px 16px}
-.day{border:1px solid #eee;border-radius:12px;padding:8px;height:84px;display:flex;flex-direction:column;gap:4px;position:relative;background:#fff}
-.day .date{font-weight:600;font-size:12px}
-.day .status{font-size:22px;line-height:1}
-.day .phaseDot{position:absolute;right:6px;top:6px;width:8px;height:8px;border-radius:50%}
-.day.today{outline:2px solid #007aff}
-.day.outside{opacity:.35}
-.legend{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 16px;font-size:12px;color:#444}
-.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
-.phase1{background:#9ad0f5}.phase2{background:#a7f59a}.phase3{background:#f9d49a}.phase4{background:#f59ab0}.phase5{background:#b79af9}
-footer{padding:8px 16px 24px;color:#666;font-size:12px}
-.picker{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#fff;border:1px solid #eee;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.1);display:flex;gap:8px;padding:10px;z-index:20}
+body{font-family:sans-serif;background:#fff;color:#111;margin:0}
+.appbar{padding:10px;background:#007aff;color:#fff;display:flex;justify-content:space-between}
+.controls,.kpi,nav{padding:10px}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;padding:10px}
+.day{border:1px solid #ccc;border-radius:8px;padding:4px;height:80px;display:flex;flex-direction:column;align-items:flex-start}
+.today{outline:2px solid #007aff}
 .hidden{display:none}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.3);display:flex;justify-content:center;align-items:center;z-index:30}
-.modal-card{width:min(520px,92vw);background:#fff;border-radius:12px;padding:14px;border:1px solid #eee}
-.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:8px}
-.tiny{font-size:11px;color:#777}
-.badge{font-size:10px;border:1px solid #eee;padding:2px 6px;border-radius:999px}
-.day .noteBadge{position:absolute;bottom:6px;right:6px}
