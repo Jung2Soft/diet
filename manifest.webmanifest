@@ -1,0 +1,9 @@
+{
+  "name": "6개월 감량 캘린더",
+  "short_name": "감량캘린더",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": []
+}
