@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="icons/icon-192.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" href="icons/icon-192.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=101">
 </head>
 <body>
   <a class="skip" href="#calendar">본문으로 건너뛰기</a>
@@ -123,10 +123,10 @@
     <div class="modal-card glass">
       <h3 id="helpTitle">사용 방법</h3>
       <ol class="help-list">
-        <li>시작일과 주 수를 정하고 <strong>플랜 적용</strong>을 눌러요.</li>
-        <li>달력의 날짜를 탭해 상태(✅/🟨/❌) 또는 메모를 기록해요.</li>
-        <li><em>백업</em>으로 저장, <em>복원</em>으로 불러오기.</li>
-        <li>사파리 공유 → <strong>홈 화면에 추가</strong>로 설치(PWA).</li>
+        <li>시작일·주 수 설정 → <strong>플랜 적용</strong></li>
+        <li>날짜 탭 → 상태(✅/🟨/❌/지우기/메모) 기록</li>
+        <li>백업/복원으로 데이터 이동</li>
+        <li>사파리 공유 → <strong>홈 화면에 추가</strong> (오프라인 지원)</li>
       </ol>
       <div class="modal-actions">
         <button id="closeHelp" class="btn primary">확인</button>
@@ -135,7 +135,7 @@
   </div>
 
   <script>document.documentElement.classList.remove('no-js');</script>
-  <script src="plan.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="plan.js?v=101" defer></script>
+  <script src="app.js?v=101" defer></script>
 </body>
 </html>
