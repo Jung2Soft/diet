@@ -1,10 +1,11 @@
 {
-  "name": "감량 캘린더",
-  "short_name": "감량",
+  "name": "감량 캘린더 · Elite",
+  "short_name": "감량 캘린더",
+  "description": "전문가급 UI/UX의 6개월 감량 캘린더 PWA",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#007aff",
+  "background_color": "#0b1220",
+  "theme_color": "#0b1220",
   "icons": [
     {
       "src": "icons/icon-192.png",
